@@ -20,5 +20,10 @@
                 description="Shows type of current file with a notification">
             <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt SEMICOLON"/>
         </action>
+        <action id="org.jetbrains.cognitivecomplexity.action.KotlinCurrentMethodInfoAction"
+                class="org.jetbrains.cognitivecomplexity.action.KotlinCurrentMethodInfoAction" text="Kotlin Method Info"
+                description="Shows name of current Kotlin method">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt OPEN_BRACKET"/>
+        </action>
     </actions>
 </idea-plugin>
