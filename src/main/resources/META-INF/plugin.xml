@@ -8,11 +8,17 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
     <depends>org.jetbrains.kotlin</depends>
+
     <actions>
         <action id="CognitiveComplexity.CurrentStateInfo"
                 class="org.jetbrains.cognitivecomplexity.action.CurrentStateInfoAction"
                 text="Current State Info" description="Shows current project name and current file name">
             <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt QUOTE"/>
+        </action>
+        <action id="org.jetbrains.cognitivecomplexity.action.CurrentFileTypeAction"
+                class="org.jetbrains.cognitivecomplexity.action.CurrentFileTypeAction" text="Current File Type"
+                description="Shows type of current file with a notification">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt SEMICOLON"/>
         </action>
     </actions>
 </idea-plugin>
