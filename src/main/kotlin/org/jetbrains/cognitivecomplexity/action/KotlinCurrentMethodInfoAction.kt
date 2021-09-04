@@ -8,6 +8,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.util.parentOfType
 import org.jetbrains.cognitivecomplexity.bundle.Bundle
 import org.jetbrains.kotlin.idea.KotlinFileType
+import org.jetbrains.kotlin.idea.core.util.getLineCount
 import org.jetbrains.kotlin.psi.KtNamedFunction
 import java.awt.BorderLayout
 import javax.swing.Action
@@ -42,7 +43,8 @@ class KotlinCurrentMethodInfoAction : AnAction() {
             val info = JLabel(
                 Bundle.message(
                     "currentMethodInfoDialog",
-                    methodInfo.name
+                    methodInfo.name,
+                    methodInfo.linesCount
                 )
             )
             return JPanel(BorderLayout()).apply {
@@ -69,10 +71,15 @@ class KotlinCurrentMethodInfoAction : AnAction() {
         override fun createActions(): Array<Action> = arrayOf(okAction)
     }
 
-    private data class MethodInfo(val name: String) {
+    private data class MethodInfo(val name: String, val linesCount: Int) {
         companion object {
-            fun of(element: PsiElement): MethodInfo? =
-                element.parentOfType<KtNamedFunction>()?.name?.let { MethodInfo(it) }
+            fun of(element: PsiElement): MethodInfo? {
+                return element.parentOfType<KtNamedFunction>()?.let { method ->
+                    method.name?.let { name ->
+                        MethodInfo(name, method.getLineCount() + 1)
+                    }
+                }
+            }
         }
     }
 }

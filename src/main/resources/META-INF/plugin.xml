@@ -22,7 +22,7 @@
         </action>
         <action id="org.jetbrains.cognitivecomplexity.action.KotlinCurrentMethodInfoAction"
                 class="org.jetbrains.cognitivecomplexity.action.KotlinCurrentMethodInfoAction" text="Kotlin Method Info"
-                description="Shows name of current Kotlin method">
+                description="Shows name and lines count of current Kotlin method">
             <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt OPEN_BRACKET"/>
         </action>
     </actions>
