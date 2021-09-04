@@ -8,4 +8,11 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
     <depends>org.jetbrains.kotlin</depends>
+    <actions>
+        <action id="CognitiveComplexity.CurrentStateInfo"
+                class="org.jetbrains.cognitivecomplexity.action.CurrentStateInfoAction"
+                text="Current State Info" description="Shows current project name and current file name">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt QUOTE"/>
+        </action>
+    </actions>
 </idea-plugin>
