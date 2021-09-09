@@ -1,24 +1,20 @@
-# cognitive-complexity-test-task
+# Cognitive Complexity Test Task
 
 ![Build](https://github.com/kkarnauk/cognitive-complexity-test-task/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-
+## Description
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+It's a test task for Fall 2021 Practice in JetBrains for the project 'Cognitive Complexity Plugin for IntelliJ-IDEA'.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+This plugin is just a set of some dialogs and notifications. Supported shortcuts:
+- `Shift + Ctrl + Alt + Quote`: open an info dialog with the current file name and the current project name.
+- `Shift + Ctrl + Alt + Semicolon`: show a notification with the type of the current file.
+- `Shift + Ctrl + Alt + OpenBracket`: show an info dialog with the name of the current method (under the caret) and its length in lines.
+  Also, you can press the button 'Add comment' and this info will be added as a comment for the method.
 
-To keep everything working, do not remove `<!-- ... -->` sections.
+If there is no current file or method, then you'll see an error like `No current file!` instead of a name.
 <!-- Plugin description end -->
 
 ## Installation
