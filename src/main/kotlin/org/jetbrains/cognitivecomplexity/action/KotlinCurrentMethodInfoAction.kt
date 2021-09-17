@@ -37,7 +37,7 @@ class KotlinCurrentMethodInfoAction : AnAction() {
         Bundle.message(
             "currentMethodInfoDialog",
             method.nameOrErrorMessage,
-            method.getLineCount() + 1
+            method.getLineCount()
         )
     ) {
         override fun createActions(): Array<Action> = super.createActions() + AddInfoCommentAction()
@@ -48,7 +48,7 @@ class KotlinCurrentMethodInfoAction : AnAction() {
                     Bundle.message(
                         "methodCommentText",
                         method.nameOrErrorMessage,
-                        method.getLineCount() + 1
+                        method.getLineCount()
                     )
                 )
                 runWriteAction {
